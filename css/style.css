@@ -220,6 +220,7 @@ html {
 
 @font-face {
   font-family: "Jost";
+  font-display: swap;
   src: url(../fonts/Jost.ttf);
 }
 nav {
@@ -371,6 +372,7 @@ main .banner button.contact {
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
+  background: rgba(255, 255, 255, 0.25);
 }
 @media only screen and (max-width: 600px) {
   main .banner button.contact {

@@ -9,6 +9,7 @@ html {
 
 @font-face {
     font-family: 'Jost';
+    font-display: swap;
     src: url(../fonts/Jost.ttf);
 }
 
@@ -169,6 +170,7 @@ main {
             -moz-transition: all 0.2s ease-in;
             -o-transition: all 0.2s ease-in;
             transition: all 0.2s ease-in;
+            background: rgb(255, 255, 255, 0.25);
 
             @media only screen and (max-width: 600px) {
                 font-size: 1.5rem;
