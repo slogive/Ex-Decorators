@@ -1,0 +1,239 @@
+@import 'normalize';
+@import 'vars';
+
+body,
+html {
+    font-family: 'Jost';
+    background: white;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url(../fonts/Jost.ttf);
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    @media only screen and (min-width: 601px) {
+        background: rgb(255, 255, 255, 0.75);
+        background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 100%
+        );
+    }
+
+    @media only screen and (max-width: 600px) {
+        ul {
+            @include box;
+            display: grid;
+            position: fixed;
+            margin: 0;
+            top: 0;
+            left: 0;
+            min-height: 100vh;
+            background: rgb(255, 255, 255, 0.75);
+            justify-content: center;
+            align-content: center;
+            gap: 30px;
+            font-size: 1.5em;
+            -webkit-transition: width 0.4s ease-in;
+            -moz-transition: width 0.4s ease-in;
+            -o-transition: width 0.4s ease-in;
+            transition: width 0.4s ease-in;
+            white-space: nowrap;
+            overflow-x: hidden;
+        }
+
+        ul.close {
+            width: 0;
+        }
+
+        ul.open {
+            width: 100%;
+        }
+    }
+
+    ul {
+        list-style: none;
+        text-align: center;
+        padding: 0;
+
+        @media only screen and (min-width: 601px) {
+            display: grid;
+            grid-auto-flow: column;
+
+            li {
+                display: grid;
+            }
+        }
+
+        li {
+            align-content: center;
+            justify-content: center;
+
+            a {
+                text-decoration: none;
+                font-weight: bold;
+                text-transform: uppercase;
+                padding: 5px 10px;
+                -webkit-transition: outline 0.2s ease-in;
+                -moz-transition: outline 0.2s ease-in;
+                -o-transition: outline 0.2s ease-in;
+                transition: outline 0.2s ease-in;
+                outline: transparent;
+
+                @media only screen and (min-width: 601px) {
+                    color: black;
+                    font-size: 1.5rem;
+                }
+
+                @media only screen and (max-width: 600px) {
+                    color: black;
+                }
+            }
+
+            a:hover {
+                outline: 1px solid black;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    button.navBtn {
+        @media only screen and (max-width: 600px) {
+            position: fixed;
+            background: rgb(255, 255, 255, 0.75);
+            bottom: 20px;
+            right: 20px;
+            padding: 20px;
+            -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+        }
+
+        @media only screen and (min-width: 601px) {
+            display: none;
+        }
+    }
+}
+
+main {
+    display: grid;
+    min-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .banner {
+        display: grid;
+        justify-content: center;
+        align-self: center;
+        gap: 20px;
+
+        span {
+            text-align: center;
+            font-weight: bold;
+            color: black;
+        }
+
+        .title {
+            @media only screen and (max-width: 600px) {
+                font-size: 4rem;
+            }
+
+            @media only screen and (min-width: 601px) {
+                font-size: 6rem;
+            }
+        }
+
+        .subtitle {
+            font-size: 3rem;
+        }
+
+        button.contact {
+            padding: 15px 30px;
+            color: black;
+            background: transparent;
+            font-weight: bold;
+            width: min-content;
+            white-space: nowrap;
+            justify-self: center;
+            border: 1px black dashed;
+            border-radius: 50px;
+            -webkit-transition: all 0.2s ease-in;
+            -moz-transition: all 0.2s ease-in;
+            -o-transition: all 0.2s ease-in;
+            transition: all 0.2s ease-in;
+
+            @media only screen and (max-width: 600px) {
+                font-size: 1.5rem;
+            }
+
+            @media only screen and (min-width: 601px) {
+                font-size: 2rem;
+            }
+        }
+
+        button.contact:hover {
+            transform: scale(1.15);
+        }
+    }
+}
+
+div.container {
+    display: grid;
+    min-height: 100vh;
+    justify-content: center;
+    align-content: center;
+
+    div.desc {
+        display: grid;
+        background: rgb(255, 255, 255, 0.75);
+        padding: 60px 20px;
+
+        span {
+            text-align: center;
+
+            @media only screen and (max-width: 600px) {
+                font-size: 3rem;
+            }
+
+            @media only screen and (min-width: 601px) {
+                font-size: 6rem;
+            }
+        }
+
+        p {
+            text-align: center;
+
+            @media only screen and (max-width: 600px) {
+                font-size: 1.25rem;
+            }
+
+            @media only screen and (min-width: 601px) {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+footer {
+    display: grid;
+    padding: 10px 20px;
+
+    span {
+        text-align: center;
+        font-size: 1.25rem;
+    }
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
